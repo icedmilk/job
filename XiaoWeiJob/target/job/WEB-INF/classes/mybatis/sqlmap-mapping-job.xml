@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.lucheng.xiaowei.dal.dao.JobDAO">
+	<insert id="addJob" parameterType="Job" keyProperty="id"
+		useGeneratedKeys="true">
+		insert into job(cid, jname, jtype, jlocation,
+		jdegree, jsalary, jexperience, jdescription) values(#{cid}, #{jname},
+		#{jtype}, #{jlocation}, #{jdegree}, #{jsalary}, #{jexperience},
+		#{jdescription});
+	</insert>
+	
+	<select id="selectAll" resultType="Job">
+		select * from Job;
+	</select>
+	
+	<select id="selectJobByCid" resultType="Job" parameterType="java.lang.String">
+		select * from job
+		where cid = #{cid};
+	</select>
+	
+	<select id="selectJobById" resultType="Job" parameterType="java.lang.String">
+		select * from job
+		where id = #{id};
+	</select>
+	
+	<delete id="deleteJobById" parameterType="java.lang.String">
+		delete from job
+		where id = #{id};
+	</delete>
+</mapper>

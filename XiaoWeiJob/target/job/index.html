@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!-- <html lang="en" class="no-js">
+-->
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小微招聘</title>
+
+<link rel="shortcut icon" href="img/favicon.ico">
+
+
+<link rel="stylesheet" type="text/css" href="css/nexus/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/nexus/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/nexus/component.css" />
+
+<script src="js/nexus/modernizr.custom.js"></script>
+
+<script type="text/javascript" src="js/plugins/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/plugins/jquery-ui.js"></script>
+<script type="text/javascript" src="js/plugins/jquery.validate.js"></script>
+<script type="text/javascript" src="js/plugins/jquery.form.js"></script>
+
+<script type="text/javascript" src="js/html/index/reg.js"></script>
+<script type="text/javascript" src="js/html/index/login.js"></script>
+
+
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+
+<link rel="stylesheet" href="css/plugins/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+<!-- slide -->
+
+<link class="slide" rel="stylesheet" href="css/supersized/supersized.css" type="text/css"
+	media="screen" />
+<link class="slide" rel="stylesheet" href="theme/supersized.shutter.css"
+	type="text/css" media="screen" />
+	
+<script class="slide" type="text/javascript" src="js/supersized/jquery.easing.min.js"></script>
+<script class="slide" type="text/javascript" src="js/supersized/supersized.3.2.7.min.js"></script>
+<script class="slide" type="text/javascript" src="theme/supersized.shutter.min.js"></script>
+
+<script type="text/javascript">
+				
+	jQuery(function($){
+		
+		$.supersized({
+			autoplay: 1,
+			// Functionality
+			slide_interval          :   2000,		// Length between transitions
+			transition              :   1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+			transition_speed		:	700,		// Speed of transition
+			progress_bar			:	false,			// Timer for each slide										   
+			// Components							
+			slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+			slides 					:  	[			// Slideshow Images
+											{image : 'img/indeximg/pic1.jpg', title : '删繁就简，极致简约'},
+											{image : 'img/indeximg/pic2.jpg', title : '简中不凡，投递分析', url:'pivot.html'},
+											{image : 'img/indeximg/pic3.jpg', title : '简中不凡，日志分析',url : 'http://localhost/lucheng//index.html#/dashboard/script/customize.js?index=real_time' },
+											{image : 'img/indeximg/pic4.jpg', title : '简中不凡，在线分析',url : 'real_time.html'},
+											
+											//{image : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/slides/shaden-2.jpg', title : 'Image Credit: Brooke Shaden', thumb : 'http://buildinternet.s3.amazonaws.com/projects/supersized/3.2/thumbs/shaden-2.jpg', url : 'http://www.nonsensesociety.com/2011/06/brooke-shaden/'}
+										]
+			
+		});
+    });
+    
+
+    
+</script>
+<style type="text/css">
+ul#demo-block {
+	margin: 0 15px 15px 15px;
+}
+
+ul#demo-block li {
+	margin: 0 0 10px 0;
+	padding: 10px;
+	display: inline;
+	float: left;
+	clear: both;
+	color: #aaa;
+	background: url('img/bg-black.png');
+	font: 11px Helvetica, Arial, sans-serif;
+}
+
+ul#demo-block li a {
+	color: #eee;
+	font-weight: bold;
+}
+</style>
+
+</head>
+<body>
+
+	<div class="container">
+		<ul id="gn-menu" class="gn-menu-main">
+
+			<li><a href="user.html">用户入口</a></li>
+
+			<li style="float:right;" id="reg_a"><a
+				class="codrops-icon codrops-icon-info" href="#"> <span>企业注册</span>
+			</a></li>
+
+			<li style="boder-right:1px solid #c6d0da;" id="login_a"><a
+				class="codrops-icon codrops-icon-drop" href="#"> <span>企业登录</span> </a></li>
+
+		</ul>
+
+		<header>
+			<ul id="demo-block">
+				<li><a href="index.html"
+					target="_blank"> <img src="img/logo.png" /> </a></li>
+				
+				
+				<li>Made by: <a
+					href="http://www.luchengsmu.com" target="_blank">陆成（2015-04）
+						</a></li>
+			</ul>
+
+			<!--End of styles-->
+
+			<!--Thumbnail Navigation-->
+			<div id="prevthumb"></div>
+			<div id="nextthumb"></div>
+
+			<!--Arrow Navigation-->
+			<a id="prevslide" class="load-item"></a> <a id="nextslide"
+				class="load-item"></a>
+
+			<div id="thumb-tray" class="load-item">
+				<div id="thumb-back"></div>
+				<div id="thumb-forward"></div>
+			</div>
+
+			<!--Time Bar-->
+			<div id="progress-back" class="load-item">
+				<div id="progress-bar"></div>
+			</div>
+
+			<!--Control Bar-->
+			<div id="controls-wrapper" class="load-item">
+				<div id="controls">
+
+					<a id="play-button"> <img id="pauseplay" src="img/pause.png" />
+					</a>
+
+					<!--Slide counter-->
+					<div id="slidecounter">
+						<span class="slidenumber"></span> / <span class="totalslides"></span>
+					</div>
+
+					<!--Slide captions displayed here-->
+					<div id="slidecaption"></div>
+
+					<!--Thumb Tray button-->
+					<a id="tray-button"> <img id="tray-arrow"
+						src="img/button-tray-up.png" /> </a>
+
+					<!--Navigation-->
+					<ul id="slide-list"></ul>
+
+				</div>
+			</div>
+
+		</header>
+	</div>
+
+<!-- 注册 -->
+	<form id="reg" title="企业用户注册" action="servlet/RegisterServlet">
+		<ol class="reg_error"></ol>
+
+		<p>
+			<label for="name">企业名称：</label> <input type="text" name="name"
+				class="text" id="name" title="企业名称为长度大于2的字符" value="阿里巴巴集团" /> <span
+				class="star">*</span>
+		</p>
+
+		<p>
+			<label for="password">登录密码：</label> <input type="password"
+				name="password" class="text" id="password" title="密码为长度大于6的字符"
+				value="123456" /> <span class="star">*</span>
+		</p>
+
+		<p>
+			<label for="confirm">确认密码：</label> <input type="password"
+				name="confirm" class="text" id="confirm" title="请再次输入密码！"
+				value="123456" /> <span class="star">*</span>
+		</p>
+
+		<p>
+			<label for="email">H&nbsp;R&nbsp;邮箱：</label> <input type="text" name="email"
+				class="text" id="email" title="Email不能为空！"
+				value="luchengemail@qq.com" /> <span class="star">*</span>
+		</p>
+		
+		<p>
+			<label>企业规模：</label>
+			<input type="radio" name="scale" value="50人以下" id="s1"/> 
+			<label for="s1">50人以下</label> 
+			<input type="radio" name="scale" value="50-100人" id="s2" /> 
+			<label for="s2">50-100人</label>
+			<input type="radio" name="scale" value="100-500人" id="s3" />
+			<label for="s3">100-500人</label>
+			<input type="radio" name="scale" value="500-1000人" id="s4" /> 
+			<label for="s4">500-1000人</label>
+			<input type="radio" name="scale" value="1000-5000人" id="s5" /> 
+			<label for="s5">1000-5000人</label>
+			<input type="radio" name="scale" value="5000人以上" id="s6" checked="checked"/> 
+			<label for="s6">5000人以上</label>
+		</p>
+		
+		<p>
+			<label>企业类型：</label> 
+			<input type="radio" name="type" value="三资企业" id="t1" checked="checked" /> 
+			<label for="t1">三资</label> 
+			<input type="radio" name="type" value="民企" id="t2" /> 
+			<label for="t2">民企</label>
+			<input type="radio" name="type" value="外企" id="t3" />
+			<label for="t3">外企</label>
+			<input type="radio" name="type" value="国企" id="t4" /> 
+			<label for="t4">国企</label>
+		</p>
+		
+		<p>
+			<label for="industry">行业类别：</label> <input type="text" name="industry"
+				class="text" id="industry" title="如互联网行业"
+				value="互联网" /> <span class="star">*</span>
+		</p>
+		
+		<p>
+			<label for="description">企业描述：</label> <input type="text" name="description"
+				class="text" id="description" title="企业简要描述" value="让天下没有难做的生意！" /> <span
+				class="star">*</span>
+		</p>
+
+
+
+		<p>
+			<label for="birth">成立日期：</label> <input type="text" name="birth"
+				readonly="readonly" class="text" id="birth" title="生日不能为空！"
+				value="1999-09-09" />
+		</p>
+
+		<br/>
+	</form>
+
+<!-- 登录 -->
+	<form id="login" title="登录">
+		<ol class="login_error"></ol>
+		<p>
+			<label>企业名称：</label> <input type="text" name="name_login"
+				class="text" id="name_login" title="企业全称" value="阿里巴巴集团" />
+			<span class="star">*</span>
+		</p>
+		<p>
+			<label>企业密码：</label> <input type="password"
+				name="password_login" class="text" id="password_login"
+				title="密码为长度大于6的字符" value="123456" /> <span class="star">*</span>
+		</p>
+	</form>
+
+	
+	
+	<script src="js/nexus/classie.js"></script>
+	<script src="js/nexus/gnmenu.js"></script>
+	<script>new gnMenu( document.getElementById( 'gn-menu' ) );</script>
+</body>
+</html>

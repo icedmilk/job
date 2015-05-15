@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.lucheng.xiaowei.dal.dao.SummaryDAO">
+	<select id="summarize" resultType="Summary">
+		SELECT company.cname, company.ctype, job.jname, job.jsalary, count(*) as sum
+		FROM delivery, job, company 
+		WHERE delivery.jid = job.id 
+		AND job.cid = company.Id 
+		GROUP BY jid
+	</select>
+	
+	<select id="summarize2" resultType="Summary2">
+		SELECT company.cname, company.ctype, company.cindustry, company.cscale, 
+		job.jname, job.jsalary, job.jdegree, job.jexperience, job.jlocation, job.jtype
+		FROM delivery, job, company 
+		WHERE delivery.jid = job.id 
+		AND job.cid = company.Id
+	</select>
+	
+</mapper>

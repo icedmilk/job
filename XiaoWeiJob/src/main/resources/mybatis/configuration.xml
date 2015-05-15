@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+<!-- 	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://127.0.0.1:3306/xiaowei_job" />
+				<property name="username" value="root" />
+				<property name="password" value="root" />
+			</dataSource>
+		</environment>
+	</environments> -->
+	
+	<typeAliases>
+		<typeAlias type="me.lucheng.xiaowei.dal.dataobject.CompanyDO" alias="Company"/>
+		<typeAlias type="me.lucheng.xiaowei.dal.dataobject.JobDO" alias="Job"/>
+		<typeAlias type="me.lucheng.xiaowei.dal.dataobject.DeliveryDO" alias="Delivery"/>
+		<typeAlias type="me.lucheng.xiaowei.dal.dataobject.SummaryDO" alias="Summary"/>
+		<typeAlias type="me.lucheng.xiaowei.dal.dataobject.Summary2DO" alias="Summary2"/>
+		
+	</typeAliases>
+	
+	
+	<mappers>
+		<mapper resource="mybatis/sqlmap-mapping-company.xml" />
+		<mapper resource="mybatis/sqlmap-mapping-job.xml" />
+		<mapper resource="mybatis/sqlmap-mapping-delivery.xml" />
+		<mapper resource="mybatis/sqlmap-mapping-summary.xml" />
+	</mappers>
+</configuration>

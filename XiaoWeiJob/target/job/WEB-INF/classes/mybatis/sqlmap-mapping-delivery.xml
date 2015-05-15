@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.lucheng.xiaowei.dal.dao.DeliveryDAO">
+	<insert id="insert" parameterType="Delivery" keyProperty="id"
+		useGeneratedKeys="true">
+		insert into delivery(jid, path) 
+		values(#{jid}, #{path});
+	</insert>
+	
+	<select id="selectPathByJid" resultType="Delivery" parameterType="java.lang.Long">
+		select * from delivery
+		where jid = #{jid}
+	</select>
+	
+	<select id="countDelivery" resultType="java.lang.Integer" parameterType="java.lang.Long">
+		select count(*) from delivery
+		where jid = #{jid}
+	</select>
+</mapper>
